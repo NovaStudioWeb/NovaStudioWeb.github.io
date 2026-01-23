@@ -75,3 +75,22 @@ if (contactForm) {
             });
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 1000, once: true });
+
+    // Año automático
+    const year = document.getElementById('year');
+    if(year) year.textContent = new Date().getFullYear();
+
+    // Cerrar menú móvil al clickear un enlace
+    const navLinks = document.querySelectorAll('.nav-link');
+    const menuToggle = document.getElementById('navbarNav');
+    const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
+    
+    navLinks.forEach((l) => {
+        l.addEventListener('click', () => {
+            if (window.innerWidth < 992) { bsCollapse.hide(); }
+        });
+    });
+});

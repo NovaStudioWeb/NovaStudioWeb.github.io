@@ -8,6 +8,15 @@
     --border: rgba(255, 255, 255, 0.08);
 }
 
+.navbar {
+    z-index: 1050; /* Asegura que esté por encima de todo */
+}
+
+/* Evita que el fondo del body se pueda scrollear cuando el menú está abierto (opcional) */
+body.modal-open {
+    overflow: hidden;
+}
+
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { background-color: var(--dark-core); color: #ffffff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
 

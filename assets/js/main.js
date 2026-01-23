@@ -5,8 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
         once: true,
         offset: 100
     });
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
 
-    // Control del Navbar al hacer Scroll
+    // 1. Cerrar al hacer click en un enlace (ya lo tenías, pero aseguremos que funcione)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    // 2. CERRAR AL HACER CLICK AFUERA
+    document.addEventListener('click', (event) => {
+        const isClickInsideMenu = navbarCollapse.contains(event.target);
+        const isClickOnToggler = navbarToggler.contains(event.target);
+        const isMenuOpen = navbarCollapse.classList.contains('show');
+
+        // Si el menú está abierto y el click no fue ni en el menú ni en el botón de abrir... ¡Cierra!
+        if (isMenuOpen && !isClickInsideMenu && !isClickOnToggler) {
+            bsCollapse.hide();
+        }
+    });
+
+     // Control del Navbar al hacer Scroll
     const navbar = document.querySelector('.navbar');
     
     window.onscroll = () => {
@@ -37,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth < 992) { bsCollapse.hide(); }
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+
+   
+
+    
 });
 
 // Manejo del Formulario de Contacto

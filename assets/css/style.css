@@ -122,3 +122,26 @@ footer { border-top: 1px solid var(--border); margin-top: 50px; padding: 40px 0;
     .nova-card { padding: 25px; }
     .display-4 { font-size: 1.8rem !important; }
 }
+
+/* Forzar alineación a la izquierda en móviles para el formulario */
+@media (max-width: 768px) {
+    #contactForm .text-start, 
+    #contactForm .form-label, 
+    #contactForm .form-control, 
+    #contactForm .form-select {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Ajuste de padding interno de la tarjeta en móvil para que no se vea apretado */
+    .nova-card {
+        padding: 20px !important;
+    }
+}
+
+/* Estilo consistente para el select (evita el error de PC que vimos antes) */
+.form-select {
+    height: 50px !important;
+    padding: 12px 16px !important;
+    line-height: 1.5;
+}

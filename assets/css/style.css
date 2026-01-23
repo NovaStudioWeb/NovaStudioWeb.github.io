@@ -1,0 +1,254 @@
+:root {
+    --dark-core: #050505;
+    --dark-card: #111111;
+    --nova-purple: #8a2be2;
+    --nova-cyan: #00d2ff;
+    --nova-gradient: linear-gradient(135deg, #00d2ff 0%, #8a2be2 100%);
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+/* Optimización de Scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: var(--dark-core);
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dark-core); }
+::-webkit-scrollbar-thumb { background: var(--nova-gradient); border-radius: 10px; }
+
+/* Navbar Estilo Glassmorphism */
+.navbar {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 0;
+    transition: all 0.4s ease;
+}
+
+.navbar-brand { 
+    font-weight: 900; 
+    letter-spacing: -1px; 
+    font-size: 1.5rem; 
+    color: #ffffff !important; 
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand span { 
+    background: var(--nova-gradient); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    margin-left: 5px;
+}
+
+.nav-logo-img {
+    height: 40px;
+    margin-right: 12px;
+    background-color: #050505; /* Coincide con el fondo para evitar el recuadro */
+    border-radius: 4px;
+}
+
+.nav-link { 
+    color: rgba(255,255,255,0.7) !important; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover { color: var(--nova-cyan) !important; }
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.12) 0%, transparent 70%);
+    padding-top: 80px;
+}
+
+.hero-title {
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.text-gradient { 
+    background: var(--nova-gradient); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.main-logo-container { margin-bottom: 30px; }
+.main-logo-container img {
+    max-width: 220px;
+    filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.2));
+}
+
+/* Tarjetas con efecto Glow */
+.nova-card {
+    background: var(--dark-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+}
+
+.nova-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--nova-cyan);
+    box-shadow: 0 20px 40px rgba(0, 210, 255, 0.1);
+}
+
+.icon-box {
+    width: 60px; height: 60px;
+    background: var(--glass);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: var(--nova-cyan);
+    margin-bottom: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.nova-card:hover .icon-box {
+    background: var(--nova-gradient);
+    color: white;
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Botón Premium */
+.btn-nova {
+    background: var(--nova-gradient);
+    color: white !important;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-nova:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+}
+
+/* Placeholders de Proyectos */
+.project-img-placeholder {
+    height: 300px; 
+    background: #151515; 
+    display: flex; 
+    align-items:center; 
+    justify-content:center;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 80px 0 40px 0;
+    margin-top: 100px;
+}
+
+.social-icon:hover {
+    color: var(--nova-cyan) !important;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+/* Estilos de Formulario Premium */
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--nova-cyan);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Personalización de los labels */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo para los ítems de info de contacto */
+.contact-info-item .icon-box {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Corrección para el Dropdown / Select */
+.form-select {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important; /* <--- ESTO EVITA LAS FLECHAS GRANDES */
+    background-position: right 1rem center !important;
+    background-size: 16px 12px !important;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: #ffffff !important;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+/* Para que las opciones dentro del select se vean bien en fondo oscuro */
+.form-select option {
+    background-color: var(--dark-card);
+    color: white;
+}
+
+.contact-info-item .icon-box {
+    width: 45px;
+    height: 45px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--nova-cyan);
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.contact-info-item:hover .icon-box {
+    background: var(--nova-gradient);
+    color: white;
+    transform: scale(1.1);
+}

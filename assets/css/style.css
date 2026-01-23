@@ -60,20 +60,51 @@ body { background-color: var(--dark-core); color: #ffffff; font-family: 'Outfit'
 }
 .btn-nova:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); }
 
-/* Form & Inputs */
+/* --- FORM & INPUTS (ADAPTADO) --- */
 .form-control, .form-select {
-    background: rgba(255, 255, 255, 0.03) !important; border: 1px solid var(--border);
-    border-radius: 12px; color: #ffffff !important; padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03) !important; 
+    border: 1px solid var(--border);
+    border-radius: 12px; 
+    color: #ffffff !important; 
+    padding: 12px 16px;
+    transition: all 0.3s ease;
 }
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--nova-cyan);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+    outline: none;
+}
+
 .form-select {
+    height: 50px !important; /* Corrige la expansión en PC */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
-    background-repeat: no-repeat !important; background-position: right 1rem center !important; background-size: 16px 12px !important;
+    background-repeat: no-repeat !important; 
+    background-position: right 1rem center !important; 
+    background-size: 16px 12px !important;
 }
+
+/* Corrige el fondo de las opciones en PC */
+.form-select option {
+    background-color: var(--dark-card) !important;
+    color: #ffffff !important;
+}
+
+/* Alineación de etiquetas */
+.form-label {
+    text-align: left;
+    display: block;
+}
+
+/* --- FIN FORM --- */
 
 /* Footer & Extras */
 .project-img-placeholder { height: 220px; background: #151515; display: flex; align-items: center; justify-content: center; }
-footer { border-top: 1px solid var(--border); margin-top: 50px; }
-.social-icon { transition: 0.3s; display: inline-block; }
+footer { border-top: 1px solid var(--border); margin-top: 50px; padding: 40px 0; }
+.social-icon { transition: 0.3s; display: inline-block; text-decoration: none; }
 .social-icon:hover { color: var(--nova-cyan) !important; transform: translateY(-3px); }
 
 /* RESPONSIVE ADJUSTMENTS */

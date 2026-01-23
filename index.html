@@ -147,8 +147,7 @@
 
                 <div class="col-lg-7" data-aos="fade-left">
                     <div class="nova-card p-4 p-md-5">
-                        <form id="contactForm">
-                            <div class="row g-3 ">
+                        <form id="contactForm"> <div class="row g-3">
                                 <div class="col-md-6 text-start">
                                     <label class="form-label small text-secondary">Nombre Completo</label>
                                     <input type="text" name="user_name" class="form-control" placeholder="Ej. Juan Pérez" required>
@@ -158,19 +157,21 @@
                                     <input type="email" name="user_email" class="form-control" placeholder="juan@ejemplo.com" required>
                                 </div>
                                 <div class="col-12 text-start">
-                                    <label class="form-label small text-secondary">Servicio</label>
+                                    <label class="form-label small text-secondary">Servicio de Interés</label>
                                     <select name="service_type" class="form-select">
+                                        <option selected disabled>Selecciona una opción</option>
                                         <option value="Desarrollo Web">Desarrollo Web Premium</option>
-                                        <option value="Branding">Branding / Logo</option>
-                                        <option value="Social Media">Social Media</option>
+                                        <option value="Branding">Diseño de Logotipo / Branding</option>
+                                        <option value="Social Media">Social Media & Content</option>
+                                        <option value="Otro">Otro Proyecto</option>
                                     </select>
                                 </div>
                                 <div class="col-12 text-start">
-                                    <label class="form-label small text-secondary">Tu Proyecto</label>
+                                    <label class="form-label small text-secondary">Cuéntanos sobre tu proyecto</label>
                                     <textarea name="message" class="form-control" rows="4" placeholder="¿Qué tienes en mente?"></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-nova w-100 py-3">Enviar Mensaje</button>
+                                    <button type="submit" class="btn btn-nova w-100 py-3">Enviar Mensaje <i class="fa-solid fa-paper-plane ms-2"></i></button>
                                 </div>
                             </div>
                         </form>

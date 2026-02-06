@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Full Stack | Omerli Javier Liranzo</title>
+    <style>
+        /* --- VARIABLES DE COLOR --- */
+        :root {
+            --bg-color: #0f172a;
+            --paper-color: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8; /* Cian (Frontend) */
+            --accent-green: #10b981; /* Verde (Backend) */
+            --accent-purple: #a855f7; /* Púrpura (Full Stack/General) */
+            --border: #334155;
+        }
+
+        /* --- ESTILOS GENERALES --- */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--paper-color);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            min-height: 90vh;
+        }
+
+        /* --- HEADER --- */
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-info h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+        }
+
+        .header-info h2 {
+            margin: 8px 0 0 0;
+            font-size: 1.3rem;
+            background: -webkit-linear-gradient(45deg, var(--accent), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 4px;
+            gap: 8px;
+        }
+
+        .contact-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover { color: var(--accent); }
+        .icon { font-style: normal; opacity: 0.8; }
+
+        /* --- SECCIONES --- */
+        section { margin-bottom: 35px; }
+
+        h3.section-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* --- EXPERIENCIA --- */
+        .job-item { margin-bottom: 30px; }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title { font-weight: bold; font-size: 1.1rem; color: #fff; }
+        .company { color: var(--accent); }
+        .job-date { font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
+
+        ul { margin: 0; padding-left: 20px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; color: #cbd5e1; font-size: 0.95rem; }
+
+        /* BOTÓN DE PROYECTO */
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 5px 12px;
+            border-radius: 4px;
+            background-color: rgba(15, 23, 42, 0.5);
+            transition: all 0.2s ease;
+            margin-top: 5px;
+        }
+
+        .project-btn:hover {
+            border-color: var(--accent);
+            background-color: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* --- SKILLS --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h4 { margin: 0 0 10px 0; font-size: 1rem; color: #e2e8f0; }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .skill-tag.backend {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        footer p { margin: 5px 0; }
+
+        /* --- UI PRINT BTN --- */
+        .print-btn-container { text-align: center; margin-bottom: 20px; }
+        .print-btn {
+            background-color: var(--accent); color: #0f172a; border: none;
+            padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3); transition: 0.3s;
+        }
+        .print-btn:hover { background-color: #fff; transform: translateY(-2px); }
+
+        /* --- MODO IMPRESIÓN --- */
+        @media print {
+            body { background-color: #fff; color: #000; padding: 0; }
+            .cv-container {
+                box-shadow: none; border: none; width: 100%; max-width: 100%;
+                margin: 0; padding: 0; background-color: #fff; display: block;
+            }
+            .print-btn-container, .project-btn { display: none; }
+            
+            :root {
+                --text-main: #000; --text-muted: #333; --accent: #000; 
+                --border: #ccc; --accent-green: #000; --accent-purple: #000;
+            }
+            .header-info h1, h3.section-title, .job-title, .header-info h2 { 
+                color: #000; -webkit-text-fill-color: initial; background: none; 
+            }
+            h3.section-title { border-bottom: 2px solid #000; }
+            .skill-tag { border: 1px solid #000; color: #000; background: none; }
+            a { text-decoration: none; color: #000; }
+            .contact-item { justify-content: flex-start; }
+            header, .contact-info, footer { text-align: left; }
+            footer { border-top: 1px solid #000; margin-top: 30px; }
+        }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            .contact-info { text-align: center; width: 100%; }
+            .contact-item { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn-container">
+        <button onclick="window.print()" class="print-btn">🖨️ Guardar como PDF / Imprimir</button>
+    </div>
+
+    <div class="cv-container">
+        <header>
+            <div class="header-info">
+                <h1>Omerli Javier Liranzo</h1>
+                <h2>Desarrollador Full Stack</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📍</span> 
+                    <span>Invivienda, Santo Domingo Este, RD</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📧</span> 
+                    <a href="mailto:NovaStudioWeb1027@gmail.com">NovaStudioWeb1027@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span> 
+                    <a href="https://wa.me/18295282607">+1 (829) 528-2607</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🌐</span> 
+                    <a href="https://novastudioweb.github.io/" target="_blank">novastudioweb.github.io</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h3 class="section-title">Perfil Profesional</h3>
+            <p style="color: #cbd5e1;">
+                Desarrollador Full Stack con visión integral del desarrollo web, combinando habilidades sólidas en Backend (Python, SQL) y Frontend (Bootstrap 5, UI/UX, HTML5/CSS3). Especializado en crear soluciones digitales completas, desde la arquitectura de bases de datos hasta interfaces de usuario intuitivas y responsivas. Apasionado por la optimización de procesos y la creación de herramientas eficientes para negocios modernos.
+            </p>
+        </section>
+
+        <section>
+            <h3 class="section-title">Habilidades Técnicas (Stack)</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend & UI</h4>
+                    <span class="skill-tag">Bootstrap 5</span>
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Diseño Responsivo</span>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend & Data</h4>
+                    <span class="skill-tag backend">Python</span>
+                    <span class="skill-tag backend">SQL / MySQL</span>
+                    <span class="skill-tag backend">APIs REST</span>
+                    <span class="skill-tag backend">Gestión de Bases de Datos</span>
+                </div>
+                <div class="skill-category">
+                    <h4>Herramientas & Dev</h4>
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Excel Avanzado</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Experiencia Profesional & Proyectos</h3>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Fundador & Desarrollador Full Stack</span> — <span class="company">Nova Studio Web</span>
+                    </div>
+                    <span class="job-date">Ene 2026 – Presente</span>
+                </div>
+                <ul>
+                    <li>Desarrollo integral de sitios web (End-to-End), gestionando desde la configuración del servidor hasta el diseño visual en Bootstrap 5.</li>
+                    <li>Implementación de bases de datos y lógica de backend para sistemas de gestión de contenido y formularios de contacto.</li>
+                    <li>Integración Full Stack de APIs externas (WhatsApp Business) para automatizar la interacción cliente-servidor.</li>
+                </ul>
+                <a href="https://novastudioweb.github.io/" target="_blank" class="project-btn">🔗 Ver Sitio Web</a>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Full Stack</span> — <span class="company">Aura Stay</span>
+                    </div>
+                    <span class="job-date">Feb 2026 – Presente</span>
+                </div>
+                <ul>
+                    <li>Arquitectura completa de plataforma hotelera: diseño de esquema de datos y desarrollo de interfaz de usuario moderna.</li>
+                    <li>Conexión de componentes frontend responsivos con lógica de negocio para una experiencia de usuario fluida.</li>
+                    <li>Optimización de rendimiento en todas las capas de la aplicación (base de datos y renderizado web).</li>
+                </ul>
+                <a href="#" target="_blank" class="project-btn">🔗 Ver Sitio Web</a>
+            </div>
+
+            <div class="job-item">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Full Stack</span> — <span class="company">NovaCare</span>
+                    </div>
+                    <span class="job-date">Oct 2025 – Presente</span>
+                </div>
+                <ul>
+                    <li>Arquitectura y desarrollo del sistema de gestión de datos (Backend) para el control de inventarios y lógica financiera.</li>
+                    <li>Diseño y maquetación de la interfaz visual de la marca (Frontend), optimizando la experiencia de usuario (UX) en canales digitales.</li>
+                    <li>Implementación de soluciones tecnológicas integrales para la automatización de procesos operativos y análisis de métricas.</li>
+                </ul>
+                <a href="#" target="_blank" class="project-btn">🔗 Ver Proyecto</a>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="section-title">Educación</h3>
+            <div class="job-item">
+                <div class="job-header">
+                    <span class="job-title">Desarrollo Web Full Stack</span>
+                    <span class="job-date">2024 - Presente</span>
+                </div>
+                <div style="color: var(--accent); margin-bottom: 5px; font-weight: 500;">Formación Continua & Documentación Oficial (Autodidacta)</div>
+                <ul>
+                    <li>Aprendizaje intensivo y actualización constante en tecnologías modernas (Python, JavaScript ES6+) mediante documentación técnica.</li>
+                    <li>Dominio avanzado de maquetación responsiva y diseño de interfaces (UI) utilizando el framework Bootstrap 5, HTML5 y CSS3.</li>
+                    <li>Aplicación práctica de conocimientos de Backend y bases de datos SQL en el desarrollo de proyectos reales y emprendimientos propios.</li>
+                </ul>
+            </div>
+            <div class="job-header">
+                    <span class="job-title">Tecnólogo en Desarrollo de Software</span>
+                    <span class="job-date">2016 - 2020</span>
+                </div>
+                <div style="color: var(--accent); margin-bottom: 5px; font-weight: 500;">Instituto Tecnológico de las Américas (ITLA)</div>
+                <ul>
+                    <li>Formación técnica sólida en fundamentos de programación, lógica algorítmica y estructuras de datos.</li>
+                    <li>Desarrollo de aplicaciones aplicando principios de Programación Orientada a Objetos (POO) y diseño de bases de datos relacionales.</li>
+                    <li>Ciclo de vida completo del desarrollo de software (SDLC), desde el análisis de requerimientos hasta la implementación.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Diseñado y Desarrollado por Omerli Liranzo y Rosa Abreu.</p>
+            <p>&copy; 2026 Nova Studio Web. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --dark-core: #050505;
+    --dark-card: #111111;
+    --nova-purple: #8a2be2;
+    --nova-cyan: #00d2ff;
+    --nova-gradient: linear-gradient(135deg, #00d2ff 0%, #8a2be2 100%);
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 90px; 
+}
+
+body { 
+    background-color: var(--dark-core); 
+    color: #ffffff; 
+    font-family: 'Outfit', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dark-core); }
+::-webkit-scrollbar-thumb { background: var(--nova-gradient); border-radius: 10px; }
+
+/* =========================================
+   2. COMPONENTES DE NAVEGACIÓN
+   ========================================= */
+.navbar {
+    z-index: 1050;
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(5, 5, 5, 0.85); 
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0; 
+    transition: all 0.4s ease;
+}
+
+.navbar-brand { 
+    font-weight: 900; 
+    font-size: 1.4rem; 
+    color: #ffffff !important; 
+    display: flex; 
+    align-items: center; 
+}
+
+.navbar-brand span { 
+    background: var(--nova-gradient); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    margin-left: 5px; 
+}
+
+.nav-logo-img { height: 35px; margin-right: 10px; border-radius: 4px; }
+
+.nav-link { 
+    color: rgba(255,255,255,0.7) !important; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    margin: 0 10px; 
+    transition: 0.3s; 
+}
+
+.nav-link:hover { color: var(--nova-cyan) !important; }
+
+/* =========================================
+   3. SECCIONES (HERO, CARDS, PROYECTOS)
+   ========================================= */
+.hero-section {
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    padding: 100px 0 50px 0;
+}
+
+.hero-title { font-weight: 900; font-size: clamp(2.2rem, 8vw, 5.5rem); line-height: 1.1; margin-bottom: 2rem; }
+
+.text-gradient { 
+    background: var(--nova-gradient); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.main-logo-container img { 
+    max-width: 180px; 
+    filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.2)); 
+    margin-bottom: 20px; 
+}
+
+.nova-card {
+    background: var(--dark-card); 
+    border: 1px solid var(--border);
+    border-radius: 24px; 
+    padding: 35px; 
+    transition: 0.4s ease; 
+    height: 100%;
+}
+
+.nova-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--nova-cyan); 
+    box-shadow: 0 15px 35px rgba(0, 210, 255, 0.1); 
+}
+
+.icon-box {
+    width: 55px; height: 55px; 
+    background: var(--glass); 
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; color: var(--nova-cyan); 
+    margin-bottom: 1.5rem; transition: 0.3s;
+}
+
+.nova-card:hover .icon-box { background: var(--nova-gradient); color: white; }
+
+.project-img-placeholder { 
+    height: 220px; 
+    background: #151515; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* =========================================
+   4. BOTONES Y FORMULARIOS
+   ========================================= */
+.btn-nova {
+    background: var(--nova-gradient); 
+    color: white !important; 
+    border: none;
+    padding: 12px 28px; 
+    border-radius: 10px; 
+    font-weight: 700;
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    text-decoration: none; 
+    display: inline-block; 
+    transition: 0.3s;
+}
+
+.btn-nova:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); 
+}
+
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.03) !important; 
+    border: 1px solid var(--border);
+    border-radius: 12px; 
+    color: #ffffff !important; 
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    text-align: left !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--nova-cyan);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+    outline: none;
+}
+
+.form-select {
+    height: 50px !important;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important; 
+    background-position: right 1rem center !important; 
+    background-size: 16px 12px !important;
+}
+
+.form-select option {
+    background-color: var(--dark-card) !important;
+    color: #ffffff !important;
+}
+
+.form-label {
+    text-align: left;
+    display: block;
+}
+
+/* =========================================
+   5. FOOTER Y SOCIAL
+   ========================================= */
+footer { border-top: 1px solid var(--border); margin-top: 50px; padding: 40px 0; }
+
+.social-icon { transition: 0.3s; display: inline-block; text-decoration: none; color: white; }
+
+.social-icon:hover { color: var(--nova-cyan) !important; transform: translateY(-3px); }
+
+/* =========================================
+   6. RESPONSIVE (MEDIA QUERIES)
+   ========================================= */
+
+/* Tablets y Laptops pequeñas */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(10, 10, 10, 0.98); 
+        margin-top: 15px;
+        padding: 25px; 
+        border-radius: 20px; 
+        border: 1px solid var(--border);
+    }
+    .hero-section { text-align: center; }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    #contactForm .text-start, 
+    #contactForm .form-label, 
+    #contactForm .form-control, 
+    #contactForm .form-select {
+        text-align: left !important;
+    }
+
+    .nova-card {
+        padding: 25px !important; /* Padding ligeramente reducido para ganar espacio */
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .hero-title { font-size: 2.2rem; }
+    .main-logo-container img { max-width: 130px; }
+    .display-4 { font-size: 1.8rem !important; }
+}
+
+/* Utilidad para evitar scroll cuando el menú está abierto */
+body.modal-open {
+    overflow: hidden;
+}
+
+/*Badge*/
+
+@keyframes pulseSoft {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+}
+
+/* Aplica el efecto solo al badge Coming Soon */
+.nova-card .text-bg-secondary {
+    animation: pulseSoft 2.5s ease-in-out infinite;
+}
+
+/* === NOVA PROJECT CARDS === */
+.nova-card {
+    background: #0f0f14;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nova-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.08),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.nova-card:hover::before {
+    opacity: 1;
+}
+
+.nova-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.project-img-placeholder {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle at top,
+        rgba(255,255,255,0.08),
+        transparent 70%
+    );
+}
+
+.badge-restaurante {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-hotel {
+    background: rgba(99, 102, 241, 0.15);
+    color: #6366f1;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.badge-salud {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+

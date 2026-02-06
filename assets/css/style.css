@@ -478,3 +478,42 @@ body.modal-open {
     box-shadow: 0 0 20px rgba(189, 0, 255, 0.6);
     transform: translateY(-2px);
 }
+
+/* --- Barra Divisora LED Animada --- */
+.nova-led-divider {
+    /* 1. Grosor y Forma */
+    height: 10px;              /* Grosor de la barra */
+    width: 100%;              /* Ocupa todo el ancho */
+    border-radius: 10px;      /* Bordes redondeados (estilo tubo de neón) */
+    margin: 40px 0;           /* Espacio arriba y abajo */
+    border: none;             /* Quita bordes por defecto */
+
+    /* 2. Colores y Degradado (Cyan - Violeta - Cyan para el loop) */
+    background: linear-gradient(90deg, 
+        #00d2ff, 
+        #bd00ff, 
+        #00d2ff
+    );
+    
+    /* 3. Tamaño del fondo para poder animarlo */
+    background-size: 200% 100%;
+
+    /* 4. Efecto de Luz (Glow) */
+    /* Sombra Cyan suave + Sombra Violeta más amplia */
+    box-shadow: 
+        0 0 10px rgba(0, 210, 255, 0.7), 
+        0 0 20px rgba(189, 0, 255, 0.5);
+
+    /* 5. Animación */
+    animation: ledFlow 3s linear infinite;
+}
+
+/* Definición de la animación de flujo */
+@keyframes ledFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}

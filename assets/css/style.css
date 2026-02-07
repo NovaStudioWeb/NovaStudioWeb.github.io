@@ -517,3 +517,51 @@ body.modal-open {
         background-position: 200% 50%;
     }
 }
+
+/* --- Estilos Avanzados para Tarjetas de Proyecto (Links) --- */
+
+/* 1. Base de la tarjeta interactiva */
+a.nova-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto "rebote" suave */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borde casi invisible al inicio */
+    background: rgba(255, 255, 255, 0.02);      /* Fondo ultra sutil */
+    position: relative;
+    overflow: hidden; /* Para contener brillos internos */
+}
+
+/* 2. Qué pasa cuando pones el mouse encima (HOVER) */
+a.nova-card:hover {
+    transform: translateY(-8px);               /* Sube hacia arriba */
+    border-color: var(--nova-cyan);            /* El borde se pone Cyan */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), /* Sombra profunda */
+                0 0 20px rgba(0, 210, 255, 0.2); /* Resplandor Cyan */
+    background: rgba(255, 255, 255, 0.05);     /* El fondo se aclara un pelín */
+}
+
+/* 3. Animación del Icono (la hamburguesa) */
+a.nova-card .project-img-placeholder i {
+    transition: all 0.4s ease;
+}
+
+a.nova-card:hover .project-img-placeholder i {
+    transform: scale(1.2) rotate(-10deg); /* Crece y gira un poco */
+    /* Le agrega un brillo del color del icono (ámbar en este caso) */
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6)); 
+}
+
+/* 4. Animación del Título */
+a.nova-card h4 {
+    transition: color 0.3s ease;
+}
+
+a.nova-card:hover h4 {
+    color: var(--nova-cyan) !important; /* El título se enciende en Cyan */
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+/* 5. Fondo del área de imagen */
+.project-img-placeholder {
+    /* Un degradado sutil para que no se vea plano */
+    background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}

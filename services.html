@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nova Studio Web - Agencia de desarrollo web y diseño de marca enfocada en resultados reales.">
+    <meta name="author" content="Nova Studio">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("YSfTemctAQNgYMN7w"); 
+       })();
+    </script>
+    
+    <title>Nova Studio | Agencia de Desarrollo & Diseño Premium</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo_removed.ico" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/index.html">
+                <img src="./assets/img/logo.png" alt="Logo" class="nav-logo-img">
+                NOVA <span>STUDIO WEB</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./services.html">SERVICIOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./projects.html">PROYECTOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">NOSOTROS</a></li>
+                    <li class="nav-item mt-3 mt-lg-0"><a class="nav-link btn-nova" href="./index.html#contacto">CONTACTAR</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero py-5 mt-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-3 fw-bold mb-3" data-aos="fade-up">Soluciones <span class="text-gradient">Digitales</span></h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;" data-aos="fade-up" data-aos-delay="100">
+                Transformamos ideas complejas en experiencias digitales fluidas y marcas memorables que conectan con tu audiencia.
+            </p>
+        </div>
+    </section>
+
+    <section class="services-grid py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="service-card-full p-4 h-100">
+                        <div class="icon-box mb-3"><i class="fas fa-code fa-2x"></i></div>
+                        <h3>Desarrollo Web Full Stack</h3>
+                        <p class="text-secondary">Sitios web de alto rendimiento optimizados para SEO. Desde landing pages hasta plataformas escalables con arquitecturas limpias.</p>
+                        <ul class="list-unstyled text-secondary small">
+                            <li><i class="fas fa-check me-2"></i>Aplicaciones Web (React, JS)</li>
+                            <li><i class="fas fa-check me-2"></i>E-commerce & Tiendas Online</li>
+                            <li><i class="fas fa-check me-2"></i>Mantenimiento y Hosting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-card-full p-4 h-100">
+                        <div class="icon-box mb-3"><i class="fas fa-paint-brush fa-2x"></i></div>
+                        <h3>Branding & Identidad</h3>
+                        <p class="text-secondary">Creamos la personalidad de tu marca. Diseño de logos, manuales de identidad y estilos visuales únicos como synthwave o minimalista.</p>
+                        <ul class="list-unstyled text-secondary small">
+                            <li><i class="fas fa-check me-2"></i>Diseño de Logotipo</li>
+                            <li><i class="fas fa-check me-2"></i>Manual de Marca</li>
+                            <li><i class="fas fa-check me-2"></i>Papelería Digital</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-card-full p-4 h-100">
+                        <div class="icon-box mb-3"><i class="fas fa-bullhorn fa-2x"></i></div>
+                        <h3>Marketing Visual</h3>
+                        <p class="text-secondary">Material gráfico de alto impacto para tus redes sociales y campañas publicitarias que captan la atención de inmediato.</p>
+                        <ul class="list-unstyled text-secondary small">
+                            <li><i class="fas fa-check me-2"></i>Flyers y Posters</li>
+                            <li><i class="fas fa-check me-2"></i>Contenido para RRSS</li>
+                            <li><i class="fas fa-check me-2"></i>Banners Publicitarios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section py-5 my-5 text-center" data-aos="fade-up">
+        <div class="container">
+            <div class="cta-box p-5 rounded-4">
+                <h2 class="mb-4">¿Tienes un proyecto en mente?</h2>
+                <p class="mb-4 text-secondary">Hablemos sobre cómo podemos llevar tu negocio al siguiente nivel digital.</p>
+                <a href="https://wa.me/18295282607" class="btn btn-nova px-5 py-3">EMPEZAR AHORA</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 border-top border-secondary border-opacity-10">
+        <div class="container">
+            <div class="navbar-brand mb-4 d-flex justify-content-center">
+                NOVA <span>STUDIO WEB</span>
+            </div>
+            <div class="mb-4">
+                <a href="https://www.instagram.com/novastudioweb" class="text-white mx-3 fs-5 social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/18295282607" class="text-white mx-3 fs-5 social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-secondary small">
+                &copy; <span id="year"></span> Nova Studio Web. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

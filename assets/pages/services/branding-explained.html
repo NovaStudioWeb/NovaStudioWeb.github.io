@@ -92,30 +92,31 @@
 
     <section class="py-5 mt-5 text-center">
         <div class="container py-5">
-            <span class="badge border border-info text-info mb-3 rounded-pill px-3">Nova Academy</span>
-            <h1 class="display-3 fw-bold mb-4 text-white">
+            <span class="badge border border-info text-info mb-3 rounded-pill px-3" data-aos="fade-down">Nova Academy</span>
+            <h1 class="display-3 fw-bold mb-4 text-white" data-aos="fade-down" data-aos-delay="100">
                 Tu Marca es más que <br> un <span class="text-gradient">Simple Logo</span>
             </h1>
-            <p class="lead text-secondary mx-auto" style="max-width: 800px;">
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;" data-aos="fade-up" data-aos-delay="200">
                 Cualquiera puede dibujar un icono bonito. <strong class="text-white">El Branding es diseñar el alma de tu negocio.</strong> Es lo que hace que te elijan a ti y no a la competencia.
             </p>
         </div>
     </section>
 
     <section class="container py-5">
-        <div class="row g-5"> <div class="col-lg-6">
+        <div class="row g-5"> 
+            <div class="col-lg-6">
                 <div class="sticky-top" style="top: 120px;">
-                    <h2 class="mb-4 text-white">El "ADN" de tu <span style="color: #8a2be2;">Negocio</span></h2>
-                    <p class="text-secondary mb-4 fs-5">
+                    <h2 class="mb-4 text-white" data-aos="fade-right">El "ADN" de tu <span style="color: #8a2be2;">Negocio</span></h2>
+                    <p class="text-secondary mb-4 fs-5" data-aos="fade-right" data-aos-delay="100">
                         Imagina tu marca como una persona. Si esa persona va vestida diferente cada día, habla idiomas distintos y cambia de personalidad, nadie confiará en ella. Nosotros creamos coherencia.
                     </p>
-                    <a href="../../../index.html#contacto" class="btn btn-nova mt-2">DISEÑAR MI IDENTIDAD <i class="fas fa-fingerprint ms-2"></i></a>
+                    <a href="../../../index.html#contacto" class="btn btn-nova mt-2" data-aos="fade-up" data-aos-delay="200">DISEÑAR MI IDENTIDAD <i class="fas fa-fingerprint ms-2"></i></a>
                 </div>
             </div>
 
             <div class="col-lg-6">
                 
-                <div class="analogy-card p-4 rounded-3 position-relative">
+                <div class="analogy-card p-4 rounded-3 position-relative" data-aos="fade-left">
                     <span class="step-number text-white">01</span>
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-user-circle fa-2x me-3" style="color: #8a2be2;"></i>
@@ -126,7 +127,7 @@
                     </p>
                 </div>
 
-                <div class="analogy-card p-4 rounded-3 position-relative">
+                <div class="analogy-card p-4 rounded-3 position-relative" data-aos="fade-left" data-aos-delay="100">
                     <span class="step-number text-white">02</span>
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-palette fa-2x me-3" style="color: #d63384;"></i>
@@ -137,7 +138,7 @@
                     </p>
                 </div>
 
-                <div class="analogy-card p-4 rounded-3 position-relative">
+                <div class="analogy-card p-4 rounded-3 position-relative" data-aos="fade-left" data-aos-delay="200">
                     <span class="step-number text-white">03</span>
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-font fa-2x me-3" style="color: #00d2ff;"></i>
@@ -148,7 +149,7 @@
                     </p>
                 </div>
 
-                <div class="analogy-card p-4 rounded-3 position-relative">
+                <div class="analogy-card p-4 rounded-3 position-relative" data-aos="fade-left" data-aos-delay="300">
                     <span class="step-number text-white">04</span>
                     <div class="d-flex align-items-center mb-3">
                         <i class="fas fa-book fa-2x text-white me-3"></i>
@@ -225,10 +226,10 @@
     </section>
     <section class="vs-section py-5 my-5">
         <div class="container text-center">
-            <h2 class="mb-5 text-white">¿Logo de Canva ($5) o Identidad Real?</h2>
+            <h2 class="mb-5 text-white" data-aos="fade-up">¿Logo de Canva ($5) o Identidad Real?</h2>
             
             <div class="row justify-content-center g-4">
-                <div class="col-md-5">
+                <div class="col-md-5" data-aos="fade-right">
                     <div class="p-5 border border-secondary border-opacity-25 rounded-4 h-100 bg-dark">
                         <div class="text-secondary mb-3"><i class="fas fa-magic fa-3x"></i></div>
                         <h4 class="text-secondary">Generador Automático</h4>
@@ -245,7 +246,7 @@
                     <span class="fw-bold fs-3 text-white">VS</span>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-5" data-aos="fade-left">
                     <div class="p-5 border rounded-4 h-100 position-relative" style="background: rgba(138, 43, 226, 0.05); border-color: #8a2be2 !important;">
                         <div class="mb-3" style="color: #8a2be2;"><i class="fas fa-crown fa-3x"></i></div>
                         <h4 class="text-white">Identidad Nova Studio</h4>
@@ -291,9 +292,11 @@
           emailjs.init("YSfTemctAQNgYMN7w"); 
         })();
 
+        // Inicialización de Animaciones
         AOS.init({
-            duration: 800,
-            once: true
+            duration: 800, // Duración en milisegundos
+            once: true,    // Solo animar una vez al bajar
+            offset: 100    // Empezar a animar 100px antes de que el elemento entre en pantalla
         });
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

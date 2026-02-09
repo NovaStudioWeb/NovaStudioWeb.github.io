@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nova Studio Web - Agencia de desarrollo web y diseño de marca enfocada en resultados reales.">
+    <meta name="author" content="Nova Studio">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("YSfTemctAQNgYMN7w"); 
+       })();
+    </script>
+    
+    <title>¿Qué es una Web Profesional? | Nova Studio</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo_removed.ico" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    
+</head>
+    <style>
+        /* Estilos específicos para esta página educativa */
+        .analogy-card {
+            border-left: 4px solid var(--nova-cyan);
+            background: rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s ease;
+        }
+        .analogy-card:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .step-number {
+            font-size: 4rem;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            right: 20px;
+            top: 0;
+            line-height: 1;
+        }
+        .vs-section {
+            background: linear-gradient(to bottom, transparent, rgba(138, 43, 226, 0.1), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../../services.html">
+                <i class="fas fa-arrow-left me-2 text-secondary"></i> Volver a <span class="ms-1">NOVA STUDIO</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-5 mt-5 text-center">
+        <div class="container py-5">
+            <span class="badge border border-info text-info mb-3 rounded-pill px-3">Nova Academy</span>
+            <h1 class="display-3 fw-bold mb-4" data-aos="fade-down">
+                Tu Negocio necesita <br> un <span class="text-gradient">Hogar Propio</span>
+            </h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;" data-aos="fade-up">
+                Las redes sociales son como vivir en un hotel: sigues sus reglas y pueden echarte cuando quieran. 
+                <strong class="text-white">Una página web es tu casa propia.</strong> Aquí te explicamos cómo la construimos.
+            </p>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="sticky-top" style="top: 100px;">
+                    <h2 class="mb-4 text-white">Anatomía de tu <span class="text-cyan">Sitio Web</span></h2>
+                    <p class="text-secondary mb-4">
+                        Para que entiendas por qué nuestro desarrollo web es "Premium", imagina que estamos construyendo una casa de lujo para tu marca. No usamos materiales prefabricados; diseñamos los planos a tu medida.
+                    </p>
+                    <a href="../index.html#contacto" class="btn btn-nova">QUIERO CONSTRUIR MI CASA <i class="fas fa-hammer ms-2"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                
+                <div class="analogy-card p-4 rounded-3 mb-4 position-relative" data-aos="fade-left">
+                    <span class="step-number">01</span>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-map-marker-alt fa-2x text-cyan me-3"></i>
+                        <h3 class="h4 m-0">El Dominio</h3>
+                    </div>
+                    <p class="text-white-50">
+                        <strong>Es la dirección de tu casa</strong> (ej: <em>tuempresa.com</em>). Sin ella, nadie sabe dónde encontrarte en el mapa de internet. Nosotros te ayudamos a elegir una dirección fácil de recordar.
+                    </p>
+                </div>
+
+                <div class="analogy-card p-4 rounded-3 mb-4 position-relative" data-aos="fade-left" data-aos-delay="100">
+                    <span class="step-number">02</span>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-server fa-2x text-violet me-3"></i>
+                        <h3 class="h4 m-0">El Hosting</h3>
+                    </div>
+                    <p class="text-white-50">
+                        <strong>Es el terreno.</strong> Necesitas un suelo firme y seguro donde construir. Si el terreno es malo (hosting barato), tu casa se caerá o será lenta. Nosotros usamos servidores de alta velocidad.
+                    </p>
+                </div>
+
+                <div class="analogy-card p-4 rounded-3 mb-4 position-relative" data-aos="fade-left" data-aos-delay="200">
+                    <span class="step-number">03</span>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-code fa-2x text-cyan me-3"></i>
+                        <h3 class="h4 m-0">El Código (Backend)</h3>
+                    </div>
+                    <p class="text-white-50">
+                        <strong>Son los cimientos, tuberías y electricidad.</strong> No se ven, pero hacen que todo funcione. Un mal código es como una casa con goteras. Nosotros escribimos código limpio para que tu web nunca falle.
+                    </p>
+                </div>
+
+                <div class="analogy-card p-4 rounded-3 mb-4 position-relative" data-aos="fade-left" data-aos-delay="300">
+                    <span class="step-number">04</span>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-paint-roller fa-2x text-magenta me-3"></i>
+                        <h3 class="h4 m-0">El Diseño (Frontend)</h3>
+                    </div>
+                    <p class="text-white-50">
+                        <strong>Es la arquitectura y decoración.</strong> Es lo que tus clientes ven. Nos aseguramos de que sea impresionante, cómoda y que invite a quedarse (y a comprar).
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="vs-section py-5 my-5">
+        <div class="container text-center">
+            <h2 class="mb-5" data-aos="fade-up">¿Por qué no usar una plantilla gratis?</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-5" data-aos="flip-left">
+                    <div class="p-5 border border-secondary border-opacity-25 rounded-4 h-100 bg-dark">
+                        <div class="text-secondary mb-3"><i class="fas fa-file-alt fa-3x"></i></div>
+                        <h4 class="text-secondary">Plantilla Genérica</h4>
+                        <hr class="border-secondary opacity-25">
+                        <ul class="list-unstyled text-start text-secondary small">
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Igual a miles de otras webs</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Lenta y pesada</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Difícil de personalizar</li>
+                            <li class="mb-2"><i class="fas fa-times text-danger me-2"></i>Sin soporte técnico real</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-1 d-flex align-items-center justify-content-center py-3">
+                    <span class="fw-bold fs-3 text-white">VS</span>
+                </div>
+
+                <div class="col-md-5" data-aos="flip-right">
+                    <div class="p-5 border border-info rounded-4 h-100 position-relative overflow-hidden" style="background: rgba(0, 210, 255, 0.05);">
+                        <div class="text-cyan mb-3"><i class="fas fa-gem fa-3x"></i></div>
+                        <h4 class="text-white">Desarrollo Nova Studio</h4>
+                        <hr class="border-info opacity-50">
+                        <ul class="list-unstyled text-start text-white small">
+                            <li class="mb-2"><i class="fas fa-check text-cyan me-2"></i>Diseño único para tu marca</li>
+                            <li class="mb-2"><i class="fas fa-check text-cyan me-2"></i>Velocidad optimizada (SEO)</li>
+                            <li class="mb-2"><i class="fas fa-check text-cyan me-2"></i>Escalable (crece contigo)</li>
+                            <li class="mb-2"><i class="fas fa-check text-cyan me-2"></i>Soporte del equipo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 text-center mb-5">
+        <div class="nova-card p-5" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold mb-4">¿Listo para poner los cimientos?</h2>
+            <p class="lead text-secondary mb-4">
+                Deja de alquilar en redes sociales. Construye tu propio activo digital hoy mismo.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="../index.html#contacto" class="btn btn-nova px-4 py-3">COTIZAR MI WEB</a>
+                <a href="https://wa.me/18295282607" class="btn btn-outline-light px-4 py-3"><i class="fab fa-whatsapp me-2"></i> HABLEMOS POR WHATSAPP</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-5 border-top border-secondary border-opacity-10">
+        <div class="container">
+            <div class="navbar-brand mb-4 d-flex justify-content-center">
+                NOVA <span>STUDIO WEB</span>
+            </div>
+            <div class="mb-4">
+                <a href="https://www.instagram.com/novastudioweb" class="text-white mx-3 fs-5 social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/18295282607" class="text-white mx-3 fs-5 social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-secondary small">
+                &copy; <span id="year"></span> Nova Studio Web. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        (function(){
+          emailjs.init("YSfTemctAQNgYMN7w"); 
+       })();
+
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

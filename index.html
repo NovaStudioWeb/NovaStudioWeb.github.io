@@ -115,80 +115,28 @@
         </section>
 
         <section class="container py-5" id="proyectos">
-            <div class="mb-5 text-center text-md-start" data-aos="fade-up">
-                <h2 class="display-4 fw-bold">
-                    Proyectos <span class="text-gradient">Seleccionados</span>
-                </h2>
-                <p class="text-secondary mt-2">
-                    Conceptos, demos y proyectos desarrollados por nuestro equipo en industrias clave.
-                </p>
-            </div>
+    <div class="mb-5 text-center text-md-start" data-aos="fade-up">
+        <h2 class="display-4 fw-bold">
+            Ultimos <span class="text-gradient">Proyectos</span>
+        </h2>
+        <p class="text-secondary mt-2">
+            Conceptos, demos y proyectos desarrollados por nuestro equipo en industrias clave.
+        </p>
+    </div>
 
-            <div class="row g-4">
+    <div class="row g-4" id="featured-projects">
+        <div class="text-center py-5">
+            <i class="fas fa-circle-notch fa-spin fa-2x text-secondary"></i>
+        </div>
+    </div>
+    
+    <div class="row mt-5" data-aos="fade-up">
+        <div class="col-12 text-center">
+            <a href="./projects.html" class="btn btn-nova px-4 py-2">VER PORTAFOLIO COMPLETO</a>
+        </div>
+    </div>
+</section>
 
-                <!-- PROYECTO 1 — RESTAURANTES -->
-                <div class="col-md-4 project-item restaurante" data-aos="zoom-in">
-                    <a href="https://novastudioweb.github.io/HomeMadeRD/" class="nova-card p-0 overflow-hidden h-100 text-decoration-none d-block">
-                        
-                        <div class="project-img-placeholder">
-                            <i class="fa-solid fa-burger fa-3x" style="color:#f59e0b;"></i>
-                        </div>
-                        
-                        <div class="p-4 text-start">
-                            <span class="badge badge-restaurante mb-2">Restaurantes</span>
-                            <h4 class="mt-2 text-light">Home Made RD</h4>
-                            <p class="text-secondary">
-                                Identidad visual urbana para expertos en hamburguesas caseras y yaroas.                            </p>
-                            <small class="text-muted">
-                                Branding · UI/UX · Landing Page
-                            </small>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- PROYECTO 2 — HOTELES -->
-                <div class="col-md-4 project-item hotel" data-aos="zoom-in" data-aos-delay="100">
-                    <a href="#" class="nova-card p-0 overflow-hidden h-100 text-decoration-none d-block">
-                        
-                        <div class="project-img-placeholder">
-                            <i class="fa-solid fa-hotel fa-3x" style="color:#6366f1;"></i>
-                        </div>
-                        
-                        <div class="p-4 text-start">
-                            <span class="badge badge-hotel mb-2">Hoteles</span>
-                            <h4 class="mt-2 text-light">Aura Stay</h4>
-                            <p class="text-secondary">
-                                Sitio web para hotel boutique enfocado en elegancia y conversión.
-                            </p>
-                            <small class="text-muted">
-                                Web Design · UI/UX · Hospitality
-                            </small>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- PROYECTO 3 — SALUD -->
-                <div class="col-md-4 project-item salud" data-aos="zoom-in" data-aos-delay="200">
-                    <a href="#" class="nova-card p-0 overflow-hidden h-100 text-decoration-none d-block">
-                        
-                        <div class="project-img-placeholder">
-                            <i class="fa-solid fa-heart-pulse fa-3x" style="color:#10b981;"></i>
-                        </div>
-                        
-                        <div class="p-4 text-start">
-                            <span class="badge badge-salud mb-2">Salud</span>
-                            <h4 class="mt-2 text-light">NovaCare</h4>
-                            <p class="text-secondary">
-                                Presencia digital para centro médico moderno y accesible.
-                            </p>
-                            <small class="text-muted">
-                                Web Institucional · UI/UX · Salud
-                            </small>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
 
         <section class="container py-5 my-5" id="contacto">
             <div class="row g-5 align-items-center">
@@ -236,26 +184,38 @@
                     <div class="nova-card p-4 p-md-5">
                         <form id="contactForm"> 
                             <div class="row g-3">
+                                
                                 <div class="col-md-6 text-start">
                                     <label class="form-label small text-secondary">Nombre Completo</label>
                                     <input type="text" name="user_name" class="form-control" placeholder="Ej. Juan Pérez" required>
                                 </div>
+
                                 <div class="col-md-6 text-start">
                                     <label class="form-label small text-secondary">Correo Electrónico</label>
                                     <input type="email" name="user_email" class="form-control" placeholder="juan@ejemplo.com" required>
                                 </div>
-                                <div class="col-12 text-start">
+
+                                <div class="col-md-6 text-start">
+                                    <label class="form-label small text-secondary">Teléfono / WhatsApp</label>
+                                    <input type="tel" name="user_phone" class="form-control" placeholder="+1 (829) 000-0000">
+                                </div>
+
+                                <div class="col-md-6 text-start">
                                     <label class="form-label small text-secondary">Servicio de Interés</label>
                                     <select name="service_type" class="form-select" required>
                                         <option value="" selected disabled>Selecciona una opción</option>
                                         <option value="Desarrollo Web">Desarrollo Web Premium</option>
                                         <option value="Branding">Diseño de Logotipo</option>
+                                        <!-- <option value="Marketing Visual">Marketing Visual</option> -->
+                                        <option value="Otro">Otro / Consulta General</option>
                                     </select>
                                 </div>
+
                                 <div class="col-12 text-start">
                                     <label class="form-label small text-secondary">Cuéntanos sobre tu proyecto</label>
                                     <textarea name="message" class="form-control" rows="4" placeholder="¿Qué tienes en mente?"></textarea>
                                 </div>
+
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-nova w-100 py-3">
                                         Enviar Mensaje
@@ -298,5 +258,6 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/projects.js"></script>
 </body>
 </html>

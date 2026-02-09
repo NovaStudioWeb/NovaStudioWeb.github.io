@@ -58,55 +58,24 @@
         </div>
     </section>
 
-    <section class="portfolio-section py-5">
-        <div class="container">
-            <div class="row g-4">
-                
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="project-card h-100 overflow-hidden rounded-4">
-                        <div class="project-img-container">
-                            <img src="./assets/img/projects/logo_homemaderd.png" class="img-fluid" alt="HomeMadeRD Project">
-                            <div class="project-overlay d-flex flex-column justify-content-end p-4">
-                                <span class="badge bg-primary mb-2 w-fit">Web Design / Branding</span>
-                                <h3 class="text-white">HomeMadeRD</h3>
-                                <p class="text-white-50 small">Sitio web y branding para repostería artesanal dominicana.</p>
-                                <a href="#" class="text-cyan text-decoration-none mt-2">Ver Proyecto <i class="fas fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card h-100 overflow-hidden rounded-4">
-                        <div class="project-img-container">
-                            <img src="./assets/img/projects/logo_aurastay.png" class="img-fluid" alt="Aura Stay Project">
-                            <div class="project-overlay d-flex flex-column justify-content-end p-4">
-                                <span class="badge bg-violet mb-2 w-fit">Web Development</span>
-                                <h3 class="text-white">Aura Stay</h3>
-                                <p class="text-white-50 small">Plataforma de gestión de reservas con interfaz moderna y minimalista.</p>
-                                <a href="#" class="text-cyan text-decoration-none mt-2">Ver Proyecto <i class="fas fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6" data-aos="fade-up">
-                    <div class="project-card h-100 overflow-hidden rounded-4">
-                        <div class="project-img-container">
-                            <img src="./assets/img/projects/logo_novacare.png" class="img-fluid" alt="NovaCare Project">
-                            <div class="project-overlay d-flex flex-column justify-content-end p-4">
-                                <span class="badge bg-magenta mb-2 w-fit">Branding / Health</span>
-                                <h3 class="text-white">NovaCare</h3>
-                                <p class="text-white-50 small">Identidad visual completa para servicios de salud digital.</p>
-                                <a href="#" class="text-cyan text-decoration-none mt-2">Ver Proyecto <i class="fas fa-arrow-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+<section class="portfolio-section py-5">
+    <div class="container">
+        
+        <div class="row mb-5" data-aos="fade-down">
+            <div class="col-12 d-flex justify-content-center flex-wrap gap-3">
+                <button class="btn btn-nova-outline active-filter" onclick="filterProjects('all')">Todos</button>
+                <button class="btn btn-nova-outline" onclick="filterProjects('salud')">Salud</button>
+                <button class="btn btn-nova-outline" onclick="filterProjects('hoteleria')">Hotelería</button>
+                <button class="btn btn-nova-outline" onclick="filterProjects('restaurantes')">Restaurantes</button>
             </div>
         </div>
-    </section>
+
+        <div class="row g-4" id="projects-container">
+            </div>
+
+    </div>
+</section>
+
 
     <section class="cta-section py-5 text-center">
         <div class="container">
@@ -144,5 +113,7 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script src="./assets/js/main.js"></script>
+<script src="./assets/js/projects.js"></script>
+
 </body>
 </html>

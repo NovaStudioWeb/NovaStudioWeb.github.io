@@ -239,3 +239,29 @@ footer { border-top: 1px solid var(--border); margin-top: 50px; padding: 40px 0;
     .display-4 { font-size: 1.8rem !important; }
 }
 body.modal-open { overflow: hidden; }
+
+/* Estilo para el botón de filtro activo */
+.btn-nova-outline.active, 
+.btn-nova-outline:focus {
+    background: var(--nova-gradient);
+    border-color: transparent;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+/* Mueve la flecha a la derecha al hacer hover en la tarjeta */
+.service-card-full:hover .animate-arrow {
+    transform: translateX(5px);
+}
+
+.animate-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Asegura que el cursor sea una mano en toda la tarjeta */
+.service-card-full {
+    cursor: pointer;
+    display: flex;       /* Para alinear el link al fondo */
+    flex-direction: column;
+}

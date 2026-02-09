@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "HomeMadeRD",
+    "category": "restaurantes",
+    "display_category": "Web Design / Branding",
+    "description": "Sitio web y branding para repostería artesanal dominicana.",
+    "image": "./assets/img/projects/logo_homemaderd.png",
+    "link": "#",
+    "badge_color": "bg-primary"
+  },
+  {
+    "id": 2,
+    "title": "Aura Stay",
+    "category": "hoteleria",
+    "display_category": "Web Development",
+    "description": "Plataforma de gestión de reservas con interfaz moderna y minimalista.",
+    "image": "./assets/img/projects/logo_aurastay.png",
+    "link": "#",
+    "badge_color": "bg-violet"
+  },
+  {
+    "id": 3,
+    "title": "NovaCare",
+    "category": "salud",
+    "display_category": "Branding / Health",
+    "description": "Identidad visual completa para servicios de salud digital.",
+    "image": "./assets/img/projects/logo_novacare.png",
+    "link": "#",
+    "badge_color": "bg-magenta"
+  }
+]

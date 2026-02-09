@@ -54,6 +54,30 @@
             -webkit-text-fill-color: transparent;
             color: #8a2be2; /* Fallback color */
         }
+
+        /* --- NUEVOS ESTILOS AGREGADOS --- */
+        /* Efecto Brand Board */
+        .brand-board {
+            background: #111;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 4px; /* Bordes casi rectos */
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .brand-board:hover {
+            transform: translateY(-5px);
+            border-color: #8a2be2;
+        }
+        .color-circle {
+            width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        /* Estilo CTA */
+        .nova-card {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -85,7 +109,7 @@
                     <p class="text-secondary mb-4 fs-5">
                         Imagina tu marca como una persona. Si esa persona va vestida diferente cada día, habla idiomas distintos y cambia de personalidad, nadie confiará en ella. Nosotros creamos coherencia.
                     </p>
-                    <a href="../index.html#contacto" class="btn btn-nova mt-2">DISEÑAR MI IDENTIDAD <i class="fas fa-fingerprint ms-2"></i></a>
+                    <a href="../../../index.html#contacto" class="btn btn-nova mt-2">DISEÑAR MI IDENTIDAD <i class="fas fa-fingerprint ms-2"></i></a>
                 </div>
             </div>
 
@@ -139,6 +163,66 @@
         </div>
     </section>
 
+    <section class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold text-white">Identidades que <span style="color: #8a2be2;">Inspiran</span></h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="flip-left">
+                <div class="brand-board p-4 h-100">
+                    <div class="text-center mb-4 py-3 border-bottom border-secondary border-opacity-25">
+                        <i class="fas fa-gem fa-2x text-white mb-2"></i>
+                        <h5 class="text-white spacing-wide">LUXURY</h5>
+                    </div>
+                    <div class="mb-3">
+                        <small class="text-secondary d-block mb-2">Paleta Cromática</small>
+                        <span class="color-circle" style="background: #000;"></span>
+                        <span class="color-circle" style="background: #d4af37;"></span> <span class="color-circle" style="background: #fff;"></span>
+                    </div>
+                    <div>
+                        <small class="text-secondary d-block mb-1">Estilo</small>
+                        <p class="text-white-50 small">Minimalista, Elegante, Premium.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                <div class="brand-board p-4 h-100">
+                    <div class="text-center mb-4 py-3 border-bottom border-secondary border-opacity-25">
+                        <i class="fas fa-bolt fa-2x" style="color: #00d2ff;"></i>
+                        <h5 class="text-white fw-bold fst-italic">FUTURE</h5>
+                    </div>
+                    <div class="mb-3">
+                        <small class="text-secondary d-block mb-2">Paleta Cromática</small>
+                        <span class="color-circle" style="background: #050505;"></span>
+                        <span class="color-circle" style="background: #00d2ff;"></span> <span class="color-circle" style="background: #8a2be2;"></span> </div>
+                    <div>
+                        <small class="text-secondary d-block mb-1">Estilo</small>
+                        <p class="text-white-50 small">Cyberpunk, Disruptivo, Digital.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                <div class="brand-board p-4 h-100">
+                    <div class="text-center mb-4 py-3 border-bottom border-secondary border-opacity-25">
+                        <i class="fas fa-leaf fa-2x text-success"></i>
+                        <h5 class="text-white" style="font-family: serif;">Natural</h5>
+                    </div>
+                    <div class="mb-3">
+                        <small class="text-secondary d-block mb-2">Paleta Cromática</small>
+                        <span class="color-circle" style="background: #2e8b57;"></span>
+                        <span class="color-circle" style="background: #f5deb3;"></span> <span class="color-circle" style="background: #556b2f;"></span>
+                    </div>
+                    <div>
+                        <small class="text-secondary d-block mb-1">Estilo</small>
+                        <p class="text-white-50 small">Sostenible, Fresco, Humano.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="vs-section py-5 my-5">
         <div class="container text-center">
             <h2 class="mb-5 text-white">¿Logo de Canva ($5) o Identidad Real?</h2>
@@ -177,7 +261,15 @@
         </div>
     </section>
 
-  <footer class="text-center py-5 border-top border-secondary border-opacity-10">
+    <section class="container py-5 text-center mb-5">
+        <div class="nova-card p-5" data-aos="zoom-in">
+            <h2 class="display-5 fw-bold mb-4 text-white">¿Quieres una marca inolvidable?</h2>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="../../../index.html#contacto" class="btn btn-nova px-4 py-3">INICIAR MI PROYECTO</a>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center py-5 border-top border-secondary border-opacity-10">
         <div class="container">
             <div class="navbar-brand mb-4 d-flex justify-content-center">
                 NOVA <span>STUDIO WEB</span>
@@ -197,7 +289,7 @@
     <script>
         (function(){
           emailjs.init("YSfTemctAQNgYMN7w"); 
-       })();
+        })();
 
         AOS.init({
             duration: 800,
@@ -205,6 +297,6 @@
         });
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script src="./assets/js/main.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 </html>

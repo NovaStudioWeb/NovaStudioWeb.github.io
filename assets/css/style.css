@@ -265,3 +265,54 @@ body.modal-open { overflow: hidden; }
     display: flex;       /* Para alinear el link al fondo */
     flex-direction: column;
 }
+
+/* --- ESTILOS PARA EJEMPLOS --- */
+
+/* Efecto Ventana de Navegador (Para Web) */
+.browser-card {
+    background: #151515;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.browser-header {
+    background: #222;
+    padding: 10px 15px;
+    display: flex;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.browser-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--nova-cyan); /* O violeta según la página */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Efecto Brand Board (Para Branding) */
+.brand-board {
+    background: #111;
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 0; /* Bordes rectos tipo papel */
+    position: relative;
+}
+.color-circle {
+    width: 30px; height: 30px; border-radius: 50%; display: inline-block; margin-right: 5px;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Efecto Social Post (Para Marketing) */
+.social-card {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+.social-header { padding: 12px; display: flex; align-items: center; gap: 10px; }
+.avatar-circle { width: 30px; height: 30px; background: #333; border-radius: 50%; }
+.social-actions i { font-size: 1.2rem; margin-right: 15px; cursor: pointer; transition: 0.2s; }
+.social-actions i:hover { color: var(--nova-cyan); }

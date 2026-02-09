@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 6. MANEJO DEL FORMULARIO DE CONTACTO (EmailJS)
+   // 6. MANEJO DEL FORMULARIO DE CONTACTO (EmailJS)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
+                    // --- AQUÍ ESTÁ TU ALERTA ---
+                    alert("¡Gracias! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto pronto.");
+                    // ---------------------------
+
                     btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check ms-2"></i>';
                     btn.style.background = '#28a745';
                     contactForm.reset();
@@ -83,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.disabled = false;
                     }, 4000);
                 }, (err) => {
+                    // También podemos poner una alerta si falla
+                    alert("Hubo un error al enviar el mensaje. Por favor intenta nuevamente.");
+                    
                     btn.disabled = false;
                     btn.innerHTML = 'Error al enviar <i class="fa-solid fa-xmark ms-2"></i>';
                     btn.style.background = '#dc3545';

@@ -1,0 +1,57 @@
+/* =========================================
+   NOVA PROJECT LINKS (Estilo Home/Index)
+   ========================================= */
+a.nova-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.02);
+    position: relative; overflow: hidden;
+}
+
+a.nova-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--nova-cyan);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+a.nova-card .project-img-placeholder i { transition: all 0.4s ease; }
+
+a.nova-card:hover .project-img-placeholder i {
+    transform: scale(1.2) rotate(-10deg);
+    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6)); 
+}
+
+a.nova-card h4 { transition: color 0.3s ease; }
+a.nova-card:hover h4 {
+    color: var(--nova-cyan) !important;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.project-img-placeholder {
+    height: 180px; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+   PROJECT GALLERY CARDS (Estilo Projects.html)
+   ========================================= */
+.project-card {
+    position: relative;
+    background: #000; 
+    min-height: 400px;
+}
+
+.project-img-container img {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.6; transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); opacity: 0.8;
+}
+
+.project-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}

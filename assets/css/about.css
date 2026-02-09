@@ -1,0 +1,109 @@
+/* =========================================
+   SECCIÓN 1: FOTO GRUPAL (HERO BANNER)
+   ========================================= */
+.team-banner-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 10px 30px rgba(0, 210, 255, 0.15), 
+                 10px 10px 30px rgba(189, 0, 255, 0.15);
+    transition: all 0.4s ease;
+}
+
+.team-banner-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: -15px 15px 40px rgba(0, 210, 255, 0.3), 
+                 15px 15px 40px rgba(189, 0, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.team-banner-img {
+    width: 100%; height: auto; display: block; object-fit: cover;
+}
+
+/* =========================================
+   SECCIÓN 2: CARDS DE PERFIL (OZ & ROSA)
+   ========================================= */
+.member-img-container {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.member-img {
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
+}
+
+/* --- ESTILO CARD OMERLI (CYAN) --- */
+.nova-card-oz {
+    background: var(--nova-dark-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 210, 255, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.nova-card-oz:hover {
+    border-color: var(--nova-cyan);
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); 
+    transform: translateY(-5px);
+}
+
+.nova-card-oz:hover .member-img { transform: scale(1.1); }
+
+/* --- ESTILO CARD ROSA (VIOLETA) --- */
+.nova-card-rosa {
+    background: var(--nova-dark-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(189, 0, 255, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.nova-card-rosa:hover {
+    border-color: var(--nova-violet);
+    box-shadow: 0 0 30px rgba(189, 0, 255, 0.2); 
+    transform: translateY(-5px);
+}
+
+.nova-card-rosa:hover .member-img { transform: scale(1.1); }
+
+/* =========================================
+   SECCIÓN 3: BOTONES PERSONALIZADOS
+   ========================================= */
+.btn-nova-outline, .btn-nova-outline-2 {
+    background: transparent; padding: 10px 20px;
+    border-radius: 50px; font-weight: 600;
+    transition: all 0.3s ease; text-decoration: none;
+    display: inline-block; border-width: 1px; border-style: solid;
+}
+
+.btn-nova-outline { color: var(--nova-cyan); border-color: var(--nova-cyan); }
+.btn-nova-outline:hover {
+    background: var(--nova-cyan); color: #000;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6); transform: translateY(-2px);
+}
+
+.btn-nova-outline-2 { color: var(--nova-violet); border-color: var(--nova-violet); }
+.btn-nova-outline-2:hover {
+    background: var(--nova-violet); color: #fff;
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.6); transform: translateY(-2px);
+}
+
+/* =========================================
+   DIVISOR LED
+   ========================================= */
+.nova-led-divider {
+    height: 10px; width: 100%; border-radius: 10px; margin: 40px 0; border: none;
+    background: linear-gradient(90deg, #00d2ff, #bd00ff, #00d2ff);
+    background-size: 200% 100%;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.7), 0 0 20px rgba(189, 0, 255, 0.5);
+    animation: ledFlow 3s linear infinite;
+}
+
+@keyframes ledFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}

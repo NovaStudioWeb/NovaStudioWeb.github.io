@@ -7,7 +7,7 @@
     --nova-purple: #8a2be2;
     --nova-cyan: #00d2ff;   /* Color Omerli */
     --nova-violet: #6310cf; /* Color Rosa */
-    --nova-dark-bg: rgba(255, 255, 255, 0.03); /* Fondo semitransparente para cards */
+    --nova-dark-bg: rgba(255, 255, 255, 0.03); 
     --nova-gradient: linear-gradient(135deg, #00d2ff 0%, #8a2be2 100%);
     --glass: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.08);
@@ -71,7 +71,7 @@ body {
 .nav-link:hover { color: var(--nova-cyan) !important; }
 
 /* =========================================
-   3. SECCIONES (HERO, CARDS, PROYECTOS)
+   3. ELEMENTOS GLOBALES (Hero, Textos, Logos)
    ========================================= */
 .hero-section {
     min-height: 100vh; 
@@ -95,6 +95,9 @@ body {
     margin-bottom: 20px; 
 }
 
+/* =========================================
+   4. TARJETAS BASE (NOVA CARD)
+   ========================================= */
 .nova-card {
     background: var(--dark-card); 
     border: 1px solid var(--border);
@@ -102,29 +105,24 @@ body {
     padding: 35px; 
     transition: 0.4s ease; 
     height: 100%;
-    
-    /* --- SOLUCIÓN DEL BLOQUEO --- */
-    position: relative;  /* Necesario para que funcione z-index */
-    z-index: 10;         /* Eleva la tarjeta por encima de fondos/decoraciones */
-    /* ----------------------------- */
+    position: relative; 
+    z-index: 10; 
 }
 
-/* Mantenemos tu efecto hover */
 .nova-card:hover { 
     transform: translateY(-10px); 
     border-color: var(--nova-cyan); 
     box-shadow: 0 15px 35px rgba(0, 210, 255, 0.1); 
 }
 
-/* --- SEGURIDAD EXTRA PARA LOS INPUTS --- */
-/* Agrega esto justo debajo para forzar que los campos reciban clics */
+/* Inputs dentro de cards */
 .nova-card input,
 .nova-card select,
 .nova-card textarea {
     position: relative;
-    z-index: 20; /* Asegura que estén "más arriba" que la propia tarjeta */
-    background: rgba(255, 255, 255, 0.05); /* Un fondo sutil ayuda a detectar el área */
-    color: white; /* Asegura contraste si escribes */
+    z-index: 20; 
+    background: rgba(255, 255, 255, 0.05); 
+    color: white; 
 }
 
 .icon-box {
@@ -138,16 +136,8 @@ body {
 
 .nova-card:hover .icon-box { background: var(--nova-gradient); color: white; }
 
-.project-img-placeholder { 
-    height: 220px; 
-    background: #151515; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-}
-
 /* =========================================
-   4. BOTONES Y FORMULARIOS
+   5. BOTONES Y FORMULARIOS GLOBALES
    ========================================= */
 .btn-nova {
     background: var(--nova-gradient); 
@@ -201,367 +191,51 @@ body {
     color: #ffffff !important;
 }
 
-.form-label {
-    text-align: left;
-    display: block;
-}
+.form-label { text-align: left; display: block; }
 
 /* =========================================
-   5. FOOTER Y SOCIAL
+   6. FOOTER Y SOCIAL
    ========================================= */
 footer { border-top: 1px solid var(--border); margin-top: 50px; padding: 40px 0; }
-
 .social-icon { transition: 0.3s; display: inline-block; text-decoration: none; color: white; }
-
 .social-icon:hover { color: var(--nova-cyan) !important; transform: translateY(-3px); }
 
 /* =========================================
-   6. RESPONSIVE (MEDIA QUERIES)
+   7. BADGES Y ANIMACIONES GENERALES
    ========================================= */
+@keyframes pulseSoft {
+    0% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.85; }
+}
 
-/* Tablets y Laptops pequeñas */
+.nova-card .text-bg-secondary { animation: pulseSoft 2.5s ease-in-out infinite; }
+
+.badge-restaurante { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); }
+.badge-hotel { background: rgba(99, 102, 241, 0.15); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.4); }
+.badge-salud { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+/* =========================================
+   8. MEDIA QUERIES GLOBALES
+   ========================================= */
 @media (max-width: 991px) {
     .navbar-collapse {
         background: rgba(10, 10, 10, 0.98); 
-        margin-top: 15px;
-        padding: 25px; 
-        border-radius: 20px; 
-        border: 1px solid var(--border);
+        margin-top: 15px; padding: 25px; 
+        border-radius: 20px; border: 1px solid var(--border);
     }
     .hero-section { text-align: center; }
 }
 
-/* Móviles */
 @media (max-width: 768px) {
-    #contactForm .text-start, 
-    #contactForm .form-label, 
-    #contactForm .form-control, 
-    #contactForm .form-select {
-        text-align: left !important;
-    }
-
-    .nova-card {
-        padding: 25px !important; /* Padding ligeramente reducido para ganar espacio */
-    }
+    #contactForm .text-start, #contactForm .form-label, 
+    #contactForm .form-control, #contactForm .form-select { text-align: left !important; }
+    .nova-card { padding: 25px !important; }
 }
 
-/* Móviles pequeños */
 @media (max-width: 576px) {
     .hero-title { font-size: 2.2rem; }
     .main-logo-container img { max-width: 130px; }
     .display-4 { font-size: 1.8rem !important; }
 }
-
-/* Utilidad para evitar scroll cuando el menú está abierto */
-body.modal-open {
-    overflow: hidden;
-}
-
-/*Badge*/
-
-@keyframes pulseSoft {
-    0% {
-        transform: scale(1);
-        opacity: 0.85;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.85;
-    }
-}
-
-/* Aplica el efecto solo al badge Coming Soon */
-.nova-card .text-bg-secondary {
-    animation: pulseSoft 2.5s ease-in-out infinite;
-}
-
-/* === NOVA PROJECT CARDS === */
-.nova-card {
-    background: #0f0f14;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.nova-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0.08),
-        transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.nova-card:hover::before {
-    opacity: 1;
-}
-
-.nova-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(255,255,255,0.15);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-.project-img-placeholder {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(
-        circle at top,
-        rgba(255,255,255,0.08),
-        transparent 70%
-    );
-}
-
-.badge-restaurante {
-    background: rgba(245, 158, 11, 0.15);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.4);
-}
-
-.badge-hotel {
-    background: rgba(99, 102, 241, 0.15);
-    color: #6366f1;
-    border: 1px solid rgba(99, 102, 241, 0.4);
-}
-
-.badge-salud {
-    background: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.4);
-}
-
-
-/*******************ABOUT/*******************/
-
-/* =========================================
-   SECCIÓN 1: FOTO GRUPAL (HERO BANNER)
-   ========================================= */
-.team-banner-wrapper {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    /* Borde sutil semitransparente */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* GLOW DUAL: Cyan a la izquierda, Violeta a la derecha */
-    box-shadow: -10px 10px 30px rgba(0, 210, 255, 0.15), 
-                 10px 10px 30px rgba(189, 0, 255, 0.15);
-                 
-    transition: all 0.4s ease;
-}
-
-.team-banner-wrapper:hover {
-    transform: translateY(-5px);
-    /* El brillo se intensifica al pasar el mouse */
-    box-shadow: -15px 15px 40px rgba(0, 210, 255, 0.3), 
-                 15px 15px 40px rgba(189, 0, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.team-banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* =========================================
-   SECCIÓN 2: CARDS DE PERFIL (OZ & ROSA)
-   ========================================= */
-
-/* Estilos base para las imágenes dentro de las cards */
-.member-img-container {
-    width: 180px; /* Tamaño del círculo/contenedor */
-    height: 180px;
-    border-radius: 50%; /* Hazlo círculo o ajusta a gusto */
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.member-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-/* --- ESTILO CARD OMERLI (CYAN) --- */
-.nova-card-oz {
-    background: var(--nova-dark-bg);
-    border-radius: 15px;
-    border: 1px solid rgba(0, 210, 255, 0.2); /* Borde Cyan sutil */
-    transition: all 0.3s ease;
-}
-
-.nova-card-oz:hover {
-    border-color: var(--nova-cyan);
-    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); /* Glow Cyan */
-    transform: translateY(-5px);
-}
-
-.nova-card-oz:hover .member-img {
-    transform: scale(1.1); /* Zoom en la foto al pasar mouse por la card */
-}
-
-/* --- ESTILO CARD ROSA (VIOLETA) --- */
-.nova-card-rosa {
-    background: var(--nova-dark-bg);
-    border-radius: 15px;
-    border: 1px solid rgba(189, 0, 255, 0.2); /* Borde Violeta sutil */
-    transition: all 0.3s ease;
-}
-
-.nova-card-rosa:hover {
-    border-color: var(--nova-violet);
-    box-shadow: 0 0 30px rgba(189, 0, 255, 0.2); /* Glow Violeta */
-    transform: translateY(-5px);
-}
-
-.nova-card-rosa:hover .member-img {
-    transform: scale(1.1);
-}
-
-/* =========================================
-   SECCIÓN 3: BOTONES PERSONALIZADOS
-   ========================================= */
-
-/* Base compartida para ambos botones */
-.btn-nova-outline, 
-.btn-nova-outline-2 {
-    background: transparent;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    border-width: 1px;
-    border-style: solid;
-}
-
-/* --- BOTÓN OMERLI (CYAN) --- */
-.btn-nova-outline {
-    color: var(--nova-cyan);
-    border-color: var(--nova-cyan);
-}
-
-.btn-nova-outline:hover {
-    background: var(--nova-cyan);
-    color: #000; /* Texto negro para contraste */
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.6);
-    transform: translateY(-2px);
-}
-
-/* --- BOTÓN ROSA (VIOLETA) --- */
-.btn-nova-outline-2 {
-    color: var(--nova-violet);
-    border-color: var(--nova-violet);
-}
-
-.btn-nova-outline-2:hover {
-    background: var(--nova-violet);
-    color: #fff; /* Texto blanco se lee mejor en violeta oscuro */
-    box-shadow: 0 0 20px rgba(189, 0, 255, 0.6);
-    transform: translateY(-2px);
-}
-
-/* --- Barra Divisora LED Animada --- */
-.nova-led-divider {
-    /* 1. Grosor y Forma */
-    height: 10px;              /* Grosor de la barra */
-    width: 100%;              /* Ocupa todo el ancho */
-    border-radius: 10px;      /* Bordes redondeados (estilo tubo de neón) */
-    margin: 40px 0;           /* Espacio arriba y abajo */
-    border: none;             /* Quita bordes por defecto */
-
-    /* 2. Colores y Degradado (Cyan - Violeta - Cyan para el loop) */
-    background: linear-gradient(90deg, 
-        #00d2ff, 
-        #bd00ff, 
-        #00d2ff
-    );
-    
-    /* 3. Tamaño del fondo para poder animarlo */
-    background-size: 200% 100%;
-
-    /* 4. Efecto de Luz (Glow) */
-    /* Sombra Cyan suave + Sombra Violeta más amplia */
-    box-shadow: 
-        0 0 10px rgba(0, 210, 255, 0.7), 
-        0 0 20px rgba(189, 0, 255, 0.5);
-
-    /* 5. Animación */
-    animation: ledFlow 3s linear infinite;
-}
-
-/* Definición de la animación de flujo */
-@keyframes ledFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 200% 50%;
-    }
-}
-
-/* --- Estilos Avanzados para Tarjetas de Proyecto (Links) --- */
-
-/* 1. Base de la tarjeta interactiva */
-a.nova-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto "rebote" suave */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Borde casi invisible al inicio */
-    background: rgba(255, 255, 255, 0.02);      /* Fondo ultra sutil */
-    position: relative;
-    overflow: hidden; /* Para contener brillos internos */
-}
-
-/* 2. Qué pasa cuando pones el mouse encima (HOVER) */
-a.nova-card:hover {
-    transform: translateY(-8px);               /* Sube hacia arriba */
-    border-color: var(--nova-cyan);            /* El borde se pone Cyan */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), /* Sombra profunda */
-                0 0 20px rgba(0, 210, 255, 0.2); /* Resplandor Cyan */
-    background: rgba(255, 255, 255, 0.05);     /* El fondo se aclara un pelín */
-}
-
-/* 3. Animación del Icono (la hamburguesa) */
-a.nova-card .project-img-placeholder i {
-    transition: all 0.4s ease;
-}
-
-a.nova-card:hover .project-img-placeholder i {
-    transform: scale(1.2) rotate(-10deg); /* Crece y gira un poco */
-    /* Le agrega un brillo del color del icono (ámbar en este caso) */
-    filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6)); 
-}
-
-/* 4. Animación del Título */
-a.nova-card h4 {
-    transition: color 0.3s ease;
-}
-
-a.nova-card:hover h4 {
-    color: var(--nova-cyan) !important; /* El título se enciende en Cyan */
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
-}
-
-/* 5. Fondo del área de imagen */
-.project-img-placeholder {
-    /* Un degradado sutil para que no se vea plano */
-    background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
+body.modal-open { overflow: hidden; }

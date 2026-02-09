@@ -55,10 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-   // 6. MANEJO DEL FORMULARIO DE CONTACTO (EmailJS)
+    // 6. MANEJO DEL FORMULARIO DE CONTACTO (EmailJS)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
+            // DETIENE LA RECARGA DE LA PÁGINA
             event.preventDefault();
             
             const btn = this.querySelector('button[type="submit"]');
@@ -73,9 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(() => {
-                    // --- AQUÍ ESTÁ TU ALERTA ---
-                    alert("¡Gracias! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto pronto.");
-                    // ---------------------------
+                    // --- MODIFICACIÓN: SWEETALERT SUCCESS ---
+                    Swal.fire({
+                        title: '¡Mensaje Recibido!',
+                        text: 'Gracias por contactar a Nova Studio. Nos pondremos en contacto pronto.',
+                        icon: 'success',
+                        background: '#111111',       // Fondo oscuro
+                        color: '#ffffff',            // Texto blanco
+                        confirmButtonColor: '#00d2ff', // Botón Cyan
+                        confirmButtonText: 'GENIAL',
+                        customClass: {
+                            popup: 'border border-secondary'
+                        }
+                    });
+                    // ----------------------------------------
 
                     btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check ms-2"></i>';
                     btn.style.background = '#28a745';
@@ -87,8 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.disabled = false;
                     }, 4000);
                 }, (err) => {
-                    // También podemos poner una alerta si falla
-                    alert("Hubo un error al enviar el mensaje. Por favor intenta nuevamente.");
+                    // --- MODIFICACIÓN: SWEETALERT ERROR ---
+                    Swal.fire({
+                        title: 'Oops...',
+                        text: 'Hubo un error al enviar el mensaje. Por favor intenta nuevamente.',
+                        icon: 'error',
+                        background: '#111111',
+                        color: '#ffffff',
+                        confirmButtonColor: '#8a2be2' // Botón Violeta
+                    });
+                    // --------------------------------------
                     
                     btn.disabled = false;
                     btn.innerHTML = 'Error al enviar <i class="fa-solid fa-xmark ms-2"></i>';

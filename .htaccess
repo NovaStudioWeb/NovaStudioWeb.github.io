@@ -1,0 +1,18 @@
+# 1. Configuración de página de error personalizada
+ErrorDocument 404 /404.html
+
+# 2. Opcional: Forzar HTTPS (Seguridad recomendada)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. Opcional: Quitar extensión .html de la URL (Estética limpia)
+# Ejemplo: tusitio.com/services en lugar de tusitio.com/services.html
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [NC,L]
+</IfModule>

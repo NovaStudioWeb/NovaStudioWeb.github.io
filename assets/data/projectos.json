@@ -6,7 +6,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca",
     "description": "Sitio web y branding para repostería artesanal dominicana.",
     "image": "./assets/img/projects/logo_homemaderd.png",
-    "link": "https://novastudioweb.github.io/HomeMadeRD/",
+    "link": "https://homemaderd.netlify.app/",
     "badge_color": "bg-primary"
   },
   {
@@ -16,7 +16,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca",
     "description": "Plataforma de gestión de reservas con interfaz moderna y minimalista.",
     "image": "./assets/img/projects/logo_aurastay.png",
-    "link": "https://novastudioweb.github.io/AuraStay",
+    "link": "https://aura-stay.netlify.app/",
     "badge_color": "bg-violet"
   },
   {
@@ -26,7 +26,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca",
     "description": "Identidad visual completa para servicios de salud digital.",
     "image": "./assets/img/projects/logo_novacare.png",
-    "link": "https://novastudioweb.github.io/NovaCare",
+    "link": "https://novacarestudio.netlify.app/",
     "badge_color": "bg-magenta"
   }
 ]

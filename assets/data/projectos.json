@@ -6,7 +6,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca / Ejemplo",
     "description": "Sitio web y branding para repostería artesanal dominicana.",
     "image": "./assets/img/projects/logo_homemaderd.png",
-    "link": "https://homemaderd.netlify.app/",
+    "link": "https://novastudioweb.github.io/HomeMadeRD/",
     "badge_color": "bg-primary"
   },
   {
@@ -14,9 +14,9 @@
     "title": "Aura Stay",
     "category": "Hoteleria",
     "display_category": "Desarrollo Web / Diseño de Marca / Ejemplo",
-    "description": "Plataforma de gestión de reservas con interfaz moderna y minimalista.",
+    "description": "Plataforma de gestión de reservas con interfaz moderna.",
     "image": "./assets/img/projects/logo_aurastay.png",
-    "link": "https://aura-stay.netlify.app/",
+    "link": "https://novastudioweb.github.io/Aura-Stay",
     "badge_color": "bg-violet"
   },
   {
@@ -26,7 +26,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca / Ejemplo",
     "description": "Identidad visual completa para servicios de salud digital.",
     "image": "./assets/img/projects/logo_novacare.png",
-    "link": "https://novacarestudio.netlify.app/",
+    "link": "https://novastudioweb.github.io/NovaCare/",
     "badge_color": "bg-magenta"
   },
     {
@@ -36,7 +36,7 @@
     "display_category": "Desarrollo Web / Diseño de Marca",
     "description": "Identidad visual completa para servicios de ventas digital.",
     "image": "./assets/img/projects/logo_rosashop.png",
-    "link": "https://rosas-shop.netlify.app/",
+    "link": "https://novastudioweb.github.io/Rosas_Shop/",
     "badge_color": "bg-magenta"
   }
 ]

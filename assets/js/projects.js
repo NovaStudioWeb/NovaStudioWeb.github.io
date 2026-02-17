@@ -9,16 +9,16 @@ async function loadProjects() {
         const response = await fetch('./assets/data/projectos.json'); 
         allProjects = await response.json();
 
-        // 1. DETECTAR SI ESTAMOS EN LA PÁGINA DE PORTAFOLIO (projects.html)
+        // 1. LÓGICA PORTFOLIO (projects.html) -> Diseño Premium
         const portfolioContainer = document.getElementById('projects-container');
         if (portfolioContainer) {
-            renderProjects(allProjects); // Cargar todos
+            renderProjects(allProjects); 
         }
 
-        // 2. DETECTAR SI ESTAMOS EN EL HOME (index.html)
+        // 2. LÓGICA HOME (index.html) -> Diseño Compacto
         const featuredContainer = document.getElementById('featured-projects');
         if (featuredContainer) {
-            renderFeaturedProjects(allProjects); // Cargar solo los destacados
+            renderFeaturedProjects(allProjects); 
         }
 
     } catch (error) {
@@ -26,24 +26,29 @@ async function loadProjects() {
     }
 }
 
-// --- LÓGICA PARA PROJECTS.HTML (TODOS LOS PROYECTOS) ---
+// ==========================================
+// RENDERIZADO: PORTFOLIO (projects.html)
+// ==========================================
 function renderProjects(projects) {
     const container = document.getElementById('projects-container');
     container.innerHTML = ''; 
 
     projects.forEach((project, index) => {
-        container.innerHTML += createCardHTML(project, index);
+        // Llamamos a la tarjeta PREMIUM
+        container.innerHTML += createPortfolioCard(project, index);
     });
 
     refreshAOS();
 }
 
-// --- LÓGICA PARA INDEX.HTML (SOLO DESTACADOS / UNO POR CATEGORÍA) ---
+// ==========================================
+// RENDERIZADO: HOME (index.html)
+// ==========================================
 function renderFeaturedProjects(projects) {
     const container = document.getElementById('featured-projects');
     container.innerHTML = '';
 
-    // Lógica Inteligente: Invertir orden y sacar 1 de cada categoría
+    // Lógica: Invertir y tomar 3 destacados (uno por categoría)
     const newestFirst = [...projects].reverse();
     const uniqueCategories = new Map();
     
@@ -57,31 +62,41 @@ function renderFeaturedProjects(projects) {
     const featured = Array.from(uniqueCategories.values()).slice(0, 3);
 
     featured.forEach((project, index) => {
-        // En el home usamos col-md-4 porque son 3 columnas, en portafolio col-md-6
-        // Así que pasamos 'col-md-4' como argumento extra a la función creadora
-        container.innerHTML += createCardHTML(project, index, 'col-md-4');
+        // Llamamos a la tarjeta HOME (Nueva función)
+        container.innerHTML += createHomeCard(project, index);
     });
 
     refreshAOS();
 }
 
-// --- FUNCIÓN GENERADORA DE HTML ACTUALIZADA ---
-function createCardHTML(project, index, columnClass = 'col-md-6') {
+/* -----------------------------------------------------
+   DISEÑO A: TARJETA PREMIUM (Para projects.html)
+   ----------------------------------------------------- */
+function createPortfolioCard(project, index) {
+    const { 
+        image, title, description, link, display_category, 
+        badge_color = 'bg-primary' 
+    } = project;
+
     return `
-        <div class="${columnClass} project-item" data-aos="fade-up" data-aos-delay="${index * 100}">
+        <div class="col-md-6 project-item" data-aos="fade-up" data-aos-delay="${index * 100}">
             <div id="card-${index}" class="project-card-premium h-100 overflow-hidden rounded-4 border-0 position-relative group">
                 
                 <div class="project-img-container" style="height: 420px;">
-                    <img src="${project.image}" class="img-fluid w-100 h-100 object-fit-cover transition-transform duration-500" alt="${project.title}">
+                    <img src="${image}" 
+                         class="img-fluid w-100 h-100 object-fit-cover transition-transform duration-500" 
+                         alt="${title}" 
+                         loading="lazy">
                     
                     <div class="position-absolute top-0 start-0 w-100 p-4 d-flex justify-content-between align-items-start bg-gradient-top pointer-events-none">
-                        <span class="badge ${project.badge_color || 'bg-primary'} border border-white border-opacity-25 shadow-sm px-3 py-2">
-                            ${project.display_category}
+                        <span class="badge ${badge_color} border border-white border-opacity-25 shadow-sm px-3 py-2">
+                            ${display_category}
                         </span>
                         
                         <div class="tech-icon bg-dark bg-opacity-75 rounded-circle p-2 text-white border border-white border-opacity-25 backdrop-blur cursor-pointer hover-glow" 
                              style="pointer-events: auto; z-index: 10; transition: 0.3s;"
                              onclick="toggleDescription(${index}, event)"
+                             role="button"
                              title="Ver descripción completa">
                             <i class="fas fa-bolt text-cyan"></i>
                         </div>
@@ -90,23 +105,53 @@ function createCardHTML(project, index, columnClass = 'col-md-6') {
 
                 <div class="project-overlay d-flex flex-column justify-content-end p-3">
                     <div class="glass-info glass-panel p-4 rounded-4 border border-white border-opacity-10 backdrop-blur">
-                        
                         <div class="d-flex justify-content-between align-items-end header-row">
                             <div class="text-content w-100">
-                                <h3 class="text-white fw-bold mb-1 h4 text-shadow">${project.title}</h3>
-                                
+                                <h3 class="text-white fw-bold mb-1 h4 text-shadow">${title}</h3>
                                 <div class="desc-wrapper">
                                     <p class="text-white-75 small mb-0 description-text text-truncate">
-                                        ${project.description}
+                                        ${description}
                                     </p>
                                 </div>
                             </div>
-                            
-                            <a href="${project.link}" class="btn-icon-action stretched-link d-flex align-items-center justify-content-center bg-white text-dark rounded-circle shadow-lg hover-scale ms-3">
-                                
+                            <a href="${link}" 
+                               class="btn-icon-action stretched-link d-flex align-items-center justify-content-center bg-white text-dark rounded-circle shadow-lg hover-scale ms-3"
+                               aria-label="Ver proyecto ${title}">
+                                <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/* -----------------------------------------------------
+   DISEÑO B: TARJETA COMPACTA (Para index.html)
+   ----------------------------------------------------- */
+function createHomeCard(project, index) {
+    const { image, title, link, display_category, badge_color = 'bg-primary' } = project;
+
+    // Diseño simplificado: Imagen + Gradiente + Título. Sin descripción larga ni rayo.
+    return `
+        <div class="col-md-4 project-item" data-aos="zoom-in" data-aos-delay="${index * 100}">
+            <div class="home-project-card h-100 rounded-4 overflow-hidden position-relative border border-secondary border-opacity-25 bg-black">
+                
+                <div class="img-wrapper" style="height: 320px;">
+                    <img src="${image}" 
+                         class="w-100 h-100 object-fit-cover hover-zoom transition-transform duration-700" 
+                         alt="${title}" 
+                         loading="lazy">
+                </div>
+
+                <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-gradient-dark d-flex flex-column justify-content-end">
+                    <span class="badge ${badge_color} w-fit mb-2 small shadow-sm">${display_category}</span>
+                    <h4 class="text-white fw-bold mb-1 h5">${title}</h4>
+                    
+                    <a href="${link}" class="stretched-link text-white text-decoration-none small mt-1 opacity-75 hover-opacity-100">
+                        Ver caso de estudio <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
                 </div>
 
             </div>
@@ -114,20 +159,15 @@ function createCardHTML(project, index, columnClass = 'col-md-6') {
     `;
 }
 
-// --- NUEVA FUNCIÓN PARA EXPANDIR/CONTRAER ---
+// --- UTILIDADES ---
+
 function toggleDescription(id, event) {
-    // 1. Evitar que el click nos lleve al link del proyecto
     event.preventDefault(); 
     event.stopPropagation();
-
-    // 2. Seleccionar la tarjeta
     const card = document.getElementById(`card-${id}`);
-    
-    // 3. Alternar la clase 'expanded'
-    card.classList.toggle('expanded');
+    if (card) card.classList.toggle('expanded');
 }
 
-// --- FILTRADO (SOLO SE USA EN PROJECTS.HTML) ---
 function filterProjects(category) {
     const buttons = document.querySelectorAll('.btn-nova-outline');
     buttons.forEach(btn => {
@@ -137,15 +177,21 @@ function filterProjects(category) {
         }
     });
 
+    // IMPORTANTE: Al filtrar, usamos createPortfolioCard porque el filtro solo está en projects.html
+    const container = document.getElementById('projects-container');
+    if (!container) return; // Seguridad si se llama desde index por error
+
+    container.innerHTML = ''; 
+
     if (category === 'all') {
-        renderProjects(allProjects);
+        allProjects.forEach((p, i) => container.innerHTML += createPortfolioCard(p, i));
     } else {
         const filtered = allProjects.filter(p => p.category.toLowerCase() === category.toLowerCase());
-        renderProjects(filtered);
+        filtered.forEach((p, i) => container.innerHTML += createPortfolioCard(p, i));
     }
+    refreshAOS();
 }
 
-// Utilidad para refrescar animaciones
 function refreshAOS() {
     if (typeof AOS !== 'undefined') {
         setTimeout(() => AOS.refresh(), 500);
@@ -155,15 +201,9 @@ function refreshAOS() {
 /* =========================================
    6. SEGURIDAD Y PREVENCIÓN
    ========================================= */
-
-// Deshabilitar menú contextual
 document.addEventListener('contextmenu', event => event.preventDefault());
-
-// Bloquear atajos de teclado de herramientas de desarrollador
 document.onkeydown = function(e) {
-    if(e.keyCode == 123 || 
-      (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
-      (e.ctrlKey && e.keyCode == 85)) {
+    if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
         return false;
     }
 }

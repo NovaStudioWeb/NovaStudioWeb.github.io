@@ -436,3 +436,44 @@ body.modal-open { overflow: hidden; }
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
     transform: scale(1.1);
 }
+
+/* =========================================
+   ANIMACIÓN DE PULSO PARA EL RAYO
+   ========================================= */
+
+/* 1. Definir los Keyframes (la secuencia de la animación) */
+@keyframes tech-pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
+        border-color: rgba(0, 210, 255, 0.5) !important;
+        transform: scale(1);
+    }
+    50% {
+        /* Punto álgido del brillo */
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.8), 0 0 30px rgba(0, 210, 255, 0.4);
+        border-color: rgba(0, 210, 255, 1) !important;
+        transform: scale(1.05); /* Crece un poquito */
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 210, 255, 0.3);
+        border-color: rgba(0, 210, 255, 0.5) !important;
+        transform: scale(1);
+    }
+}
+
+/* 2. Aplicar la animación a la clase .tech-icon existente */
+/* BUSCA tu bloque .tech-icon actual en el CSS y asegúrate de que tenga la línea de 'animation' */
+
+.tech-icon {
+    /* ... tus estilos existentes (background, etc.) ... */
+    
+    /* AGREGA ESTA LÍNEA: Nombre | Duración | Repetición | Suavizado */
+    animation: tech-pulse 2s infinite ease-in-out;
+}
+
+/* 3. Pausar el pulso al hacer HOVER para que el efecto de hover tome el control */
+.tech-icon:hover {
+    animation-play-state: paused; /* Se detiene cuando el mouse está encima */
+    
+    /* ... tus estilos de hover existentes (rotate, scale, etc.) ... */
+}

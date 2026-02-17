@@ -103,7 +103,7 @@ function createCardHTML(project, index, columnClass = 'col-md-6') {
                             </div>
                             
                             <a href="${project.link}" class="btn-icon-action stretched-link d-flex align-items-center justify-content-center bg-white text-dark rounded-circle shadow-lg hover-scale ms-3">
-                                <i class="fas fa-arrow-right"></i>
+                                
                             </a>
                         </div>
                     </div>

@@ -316,3 +316,123 @@ body.modal-open { overflow: hidden; }
 .avatar-circle { width: 30px; height: 30px; background: #333; border-radius: 50%; }
 .social-actions i { font-size: 1.2rem; margin-right: 15px; cursor: pointer; transition: 0.2s; }
 .social-actions i:hover { color: var(--nova-cyan); }
+
+/* --- ESTILOS CARD PREMIUM (PROYECTOS) --- */
+
+.project-card-premium {
+    position: relative;
+    background: #000;
+    cursor: pointer;
+}
+
+/* Animación de Imagen al hacer Hover en la tarjeta */
+.project-card-premium:hover img {
+    transform: scale(1.1); /* Zoom suave */
+    opacity: 0.8;
+}
+
+.project-img-container img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Gradiente superior sutil */
+.bg-gradient-top {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    z-index: 2;
+}
+
+/* Efecto Glassmorphism (Panel Inferior) */
+.glass-info {
+    background: rgba(15, 15, 20, 0.65); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(12px);       /* Efecto borroso detrás */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+/* Al hacer hover, el panel de cristal sube un poco y brilla */
+.project-card-premium:hover .glass-info {
+    background: rgba(15, 15, 20, 0.85);
+    border-color: var(--nova-cyan); /* Borde Cyan al pasar mouse */
+    transform: translateY(-5px);
+}
+
+/* Tech Icon (El rayito arriba a la derecha) */
+.tech-icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Botón de Acción (Flecha) */
+.btn-icon-action {
+    width: 45px; height: 45px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.project-card-premium:hover .btn-icon-action {
+    background: var(--nova-gradient) !important; /* Cambia a degradado */
+    color: white !important;
+    transform: rotate(-45deg); /* Gira la flecha ligeramente */
+}
+
+/* Texto Sombra */
+.text-shadow {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- LÓGICA DE EXPANSIÓN DE DESCRIPCIÓN --- */
+
+/* 1. Estado Base del Panel de Cristal */
+.glass-panel {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    max-height: 120px; /* Altura inicial compacta */
+    overflow: hidden;
+}
+
+/* 2. Estado EXPANDIDO (Cuando se hace click en el rayo) */
+.project-card-premium.expanded .glass-panel {
+    background: rgba(10, 10, 15, 0.95); /* Fondo más oscuro para leer bien */
+    border-color: var(--nova-cyan);
+    transform: translateY(-10px); /* Sube un poco */
+    max-height: 350px; /* Altura suficiente para texto largo */
+}
+
+/* 3. Manejo del Texto */
+.description-text {
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Por defecto una linea */
+}
+
+.project-card-premium.expanded .description-text {
+    white-space: normal !important; /* Permite múltiples líneas */
+    text-overflow: clip;
+    overflow: visible;
+    margin-top: 10px;
+    padding-right: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+    color: #fff !important;
+}
+
+/* 4. Animación del Rayo al estar activo */
+.project-card-premium.expanded .tech-icon {
+    background: var(--nova-cyan) !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--nova-cyan);
+}
+.project-card-premium.expanded .tech-icon i {
+    color: #000 !important;
+}
+
+/* 5. Asegurar que el botón de flecha no estorbe al expandir */
+.project-card-premium.expanded .header-row {
+    align-items: flex-start !important; /* Alinear arriba cuando se expanda */
+}
+
+/* Estilo extra para el cursor del rayo */
+.hover-glow:hover {
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    transform: scale(1.1);
+}
